@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { FaMobileAlt } from 'react-icons/fa';
 import { FaComputer } from 'react-icons/fa6';
@@ -5,6 +6,13 @@ import { GiCircuitry } from 'react-icons/gi';
 import { MdWeb } from 'react-icons/md';
 
 export const Cards = ({ languages, selected, setSelectedType }) => {
+  const [activeCard, setActiveCard] = useState(null);
+
+  // Reset activeCard when the selected language changes
+  useEffect(() => {
+    setActiveCard(null); // Reset active card when the language is changed
+  }, [selected]); // Dependency on `selected` language
+
   if (!selected) return null; // Don't display cards if no language is selected
 
   const selectedLanguage = languages[selected];
@@ -18,7 +26,7 @@ export const Cards = ({ languages, selected, setSelectedType }) => {
       type: 'Web',
       title: 'Web',
       icon: <MdWeb className='text-8xl' />,
-      bgClass: 'bg-amber-400',
+      bgClass: 'bg-amber-400', // Default background color
     },
     {
       type: 'Desktop',
@@ -45,13 +53,22 @@ export const Cards = ({ languages, selected, setSelectedType }) => {
     selectedProjectTypes.includes(card.type)
   );
 
+  const handleCardClick = (cardType) => {
+    setActiveCard(cardType); // Set the clicked card as active
+    setSelectedType(cardType); // Update the parent with the selected type
+  };
+
   return (
     <div className='flex flex-row gap-8 mt-8 justify-center'>
       {filteredCards.map((card, index) => (
         <Card
           key={index}
-          className={`w-[200px] ${card.bgClass} cursor-pointer`}
-          onClick={() => setSelectedType(card.type)}
+          className={`w-[200px] cursor-pointer transition-all duration-300 ease-in-out ${
+            activeCard === card.type
+              ? `${card.bgClass} shadow-lg scale-105` // Active/selected card: original color and visual effects
+              : 'bg-zinc-200' // Non-selected card: grayed out background
+          } hover:${activeCard !== card.type ? card.bgClass : ''}`} // Non-selected card hover effect
+          onClick={() => handleCardClick(card.type)} // Set active card on click
         >
           <CardHeader>
             <CardTitle className='flex justify-center uppercase'>
