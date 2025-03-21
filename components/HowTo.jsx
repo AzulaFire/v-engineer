@@ -18,7 +18,7 @@ const HowTo = () => {
       <SheetContent side='left'>
         <SheetHeader>
           <SheetTitle className='font-bold text-black text-xl mb-4'>
-            Decision Matrix:
+            TechNavigator:
           </SheetTitle>
           <SheetDescription className='text-start font-bold text-sm text-black'>
             Instructions

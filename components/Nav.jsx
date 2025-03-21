@@ -18,7 +18,6 @@ export const Nav = ({ selected, handleReset }) => {
             </Button>
           )}
         </div>
-        <HowTo />
       </div>
     </nav>
   );
