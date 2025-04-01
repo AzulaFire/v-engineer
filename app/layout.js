@@ -17,7 +17,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={`${robotoMono.variable} antialiased`}>{children}</body>
+      <body className={`${robotoMono.variable} antialiased max-h-full`}>
+        {children}
+      </body>
     </html>
   );
 }

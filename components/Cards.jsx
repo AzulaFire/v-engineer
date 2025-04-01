@@ -5,7 +5,7 @@ import { FaComputer } from 'react-icons/fa6';
 import { GiCircuitry } from 'react-icons/gi';
 import { MdWeb } from 'react-icons/md';
 
-export const Cards = ({ languages, selected, setSelectedType }) => {
+export const Cards = ({ languages, selected, setSelectedType, language }) => {
   const [activeCard, setActiveCard] = useState(null);
 
   // Reset activeCard when the selected language changes
@@ -25,24 +25,28 @@ export const Cards = ({ languages, selected, setSelectedType }) => {
     {
       type: 'Web',
       title: 'Web',
+      jp: 'ウェブ',
       icon: <MdWeb className='text-8xl' />,
       bgClass: 'bg-amber-400', // Default background color
     },
     {
       type: 'Desktop',
       title: 'Desktop',
+      jp: 'デスクトップ',
       icon: <FaComputer className='text-8xl' />,
       bgClass: 'bg-sky-600',
     },
     {
       type: 'Mobile',
       title: 'Mobile',
+      jp: 'モバイル',
       icon: <FaMobileAlt className='text-8xl' />,
       bgClass: 'bg-pink-600',
     },
     {
       type: 'Embedded',
       title: 'Embedded',
+      jp: '埋め込み',
       icon: <GiCircuitry className='text-8xl' />,
       bgClass: 'bg-green-600',
     },
@@ -63,16 +67,16 @@ export const Cards = ({ languages, selected, setSelectedType }) => {
       {filteredCards.map((card, index) => (
         <Card
           key={index}
-          className={`w-[200px] cursor-pointer transition-all duration-300 ease-in-out ${
+          className={`w-[200px] cursor-pointer transition-all duration-300 ease-in-out group hover:scale-105 hover:bg-zinc-500 ${
             activeCard === card.type
               ? `${card.bgClass} shadow-lg scale-105` // Active/selected card: original color and visual effects
               : 'bg-zinc-200' // Non-selected card: grayed out background
-          } hover:${activeCard !== card.type ? card.bgClass : ''}`} // Non-selected card hover effect
+          }`}
           onClick={() => handleCardClick(card.type)} // Set active card on click
         >
           <CardHeader>
             <CardTitle className='flex justify-center uppercase'>
-              {card.title}
+              {language ? card.title : card.jp}
             </CardTitle>
           </CardHeader>
           <CardContent>

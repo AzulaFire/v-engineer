@@ -1,9 +1,10 @@
 'use client';
 
-import HowTo from './HowTo';
 import { Button } from './ui/button';
+import { Switch } from '@/components/ui/switch';
+import { Label } from './ui/label';
 
-export const Nav = ({ selected, handleReset }) => {
+export const Nav = ({ selected, handleReset, setLanguage, language }) => {
   return (
     <nav className='border-b bg-[#1A1A1D] lg:sticky top-0 w-full'>
       <div className='flex flex-wrap lg:flex-nowrap items-center text-2xl text-white mx-4 py-2 gap-4'>
@@ -17,6 +18,15 @@ export const Nav = ({ selected, handleReset }) => {
               Reset
             </Button>
           )}
+        </div>
+        <div className='ml-auto flex flex-row'>
+          <Label className='mr-2 text-amber-400'>EN</Label>
+          <Switch
+            className='data-[state=checked]:bg-amber-400'
+            onCheckedChange={(checked) => {
+              setLanguage((prevState) => !prevState); // Toggle the state
+            }}
+          />
         </div>
       </div>
     </nav>

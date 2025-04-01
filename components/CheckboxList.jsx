@@ -1,4 +1,5 @@
 import { Checkbox } from '@/components/ui/checkbox';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Separator } from '@/components/ui/separator';
 import { useState } from 'react'; // Import useState to handle state
 import { motion } from 'framer-motion'; // Import motion from framer-motion
@@ -7,7 +8,9 @@ export const CheckboxList = ({
   language,
   selectedType,
   handleChange,
+  handleRadioChange,
   languages,
+  title,
   result, // Pass the result object to track the selected frameworks, databases, and cloud services
 }) => {
   const languageData = languages[language];
@@ -26,14 +29,14 @@ export const CheckboxList = ({
 
   if (languageData && selectedType && languageData[selectedType]) {
     return (
-      <section className='mt-14 ml-14'>
+      <section className='mt-6 ml-14'>
         <div>
           {/* Frameworks Section */}
           <h2
             className='text-lg font-semibold mb-4 uppercase cursor-pointer'
             onClick={() => handleToggle('frameworks')}
           >
-            Frameworks/Libraries
+            {title ? 'Frameworks/Libraries:' : 'フレームワーク/ライブラリ:'}
           </h2>
           <motion.div
             className='accordion-content'
@@ -72,7 +75,7 @@ export const CheckboxList = ({
             className='text-lg font-semibold mb-4 uppercase cursor-pointer'
             onClick={() => handleToggle('databases')}
           >
-            Databases
+            {title ? 'Databases:' : 'データベース:'}
           </h2>
           <motion.div
             className='accordion-content'
@@ -111,7 +114,7 @@ export const CheckboxList = ({
             className='text-lg font-semibold mb-4 uppercase cursor-pointer'
             onClick={() => handleToggle('cloud')}
           >
-            Cloud Services
+            {title ? 'Cloud Services:' : 'クラウドサービス:'}
           </h2>
           <motion.div
             className='accordion-content'
@@ -137,6 +140,47 @@ export const CheckboxList = ({
                     >
                       {item}
                     </label>
+                  </div>
+                ))}
+              </div>
+            )}
+          </motion.div>
+
+          <Separator className='my-4' />
+
+          {/* Experience Section */}
+          <h2
+            className='text-lg font-semibold mb-4 uppercase cursor-pointer'
+            onClick={() => handleToggle('experience')}
+          >
+            {title ? 'Experience:' : '経験:'}
+          </h2>
+          <motion.div
+            className='accordion-content'
+            initial={{ height: 0 }}
+            animate={{ height: expandedSection === 'experience' ? 'auto' : 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+          >
+            {expandedSection === 'experience' && (
+              <div className='grid grid-cols-4 gap-4'>
+                {languageData['experience'].map((item, index) => (
+                  <div key={index} className='flex items-center space-x-2'>
+                    <RadioGroup
+                      value={result.experience} // Make sure this value is controlled by `result.experience`
+                      onValueChange={(value) =>
+                        handleRadioChange('experience', value)
+                      } // Update the state when a new item is selected
+                    >
+                      <div className='flex items-center space-x-2'>
+                        <RadioGroupItem value={item} id={item} />
+                        <label
+                          htmlFor={item}
+                          className='text-sm font-medium leading-none capitalize flex gap-x-2 items-center cursor-pointer'
+                        >
+                          {item}
+                        </label>
+                      </div>
+                    </RadioGroup>
                   </div>
                 ))}
               </div>

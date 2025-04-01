@@ -4,7 +4,7 @@ import { Nav } from '@/components/Nav';
 import { Technologies } from '@/components/Technologies';
 import { User } from '@/components/User';
 import { Cards } from '@/components/Cards';
-import { languages } from '@/data/technologies.js'; // Import languages data
+import { languages, jpLanguages } from '@/data/technologies.js'; // Import languages data
 import { CheckboxList } from '@/components/CheckboxList';
 
 export default function Home() {
@@ -16,7 +16,10 @@ export default function Home() {
     frameworks: [],
     databases: [],
     cloudServices: [],
+    experience: '',
   });
+  const [siteLanguage, setSiteLanguage] = useState({});
+  const [language, setLanguage] = useState(false);
 
   useEffect(() => {
     if (selected && selectedType) {
@@ -27,9 +30,38 @@ export default function Home() {
         frameworks: [], // Reset frameworks on language/type change
         databases: [], // Reset databases on language/type change
         cloudServices: [], // Reset cloud services on language/type change
+        experience: '', // Reset experience on language/type change
       });
     }
   }, [selected, selectedType]); // Triggered when language or type changes
+
+  useEffect(() => {
+    if (language) {
+      setSelected(undefined);
+      setSelectedType(undefined);
+      setResult({
+        language: '',
+        type: '',
+        frameworks: [], // Reset frameworks on language/type change
+        databases: [], // Reset databases on language/type change
+        cloudServices: [], // Reset cloud services on language/type change
+        experience: '', // Reset experience on language/type change
+      });
+      setSiteLanguage(languages);
+    } else {
+      setSelected(undefined);
+      setSelectedType(undefined);
+      setResult({
+        language: '',
+        type: '',
+        frameworks: [], // Reset frameworks on language/type change
+        databases: [], // Reset databases on language/type change
+        cloudServices: [], // Reset cloud services on language/type change
+        experience: '', // Reset experience on language/type change
+      });
+      setSiteLanguage(jpLanguages);
+    }
+  }, [language]);
 
   const handleReset = () => {
     setSelected(undefined);
@@ -40,7 +72,9 @@ export default function Home() {
       frameworks: [], // Reset frameworks on language/type change
       databases: [], // Reset databases on language/type change
       cloudServices: [], // Reset cloud services on language/type change
+      experience: '', // Reset experience on language/type change
     });
+    setLanguage(false);
   };
 
   const handleChange = (type, item) => {
@@ -64,9 +98,20 @@ export default function Home() {
     });
   };
 
+  const handleRadioChange = (type, item) => {
+    setResult((prevResult) => ({
+      ...prevResult,
+      [type]: item, // Directly set the selected value
+    }));
+  };
+
   return (
     <>
-      <Nav selected={selected} handleReset={handleReset} />
+      <Nav
+        selected={selected}
+        handleReset={handleReset}
+        setLanguage={setLanguage}
+      />
       <div className='container mx-auto px-4 py-8'>
         {/* Show the message on small screens and hide the content */}
         <div className='block lg:hidden text-center'>
@@ -80,27 +125,30 @@ export default function Home() {
           {/* 3/4 section: Only visible on large screens */}
           <div className='w-full lg:w-3/4 border-r lg:block hidden'>
             <Technologies
-              languages={languages}
+              languages={siteLanguage}
               selected={selected}
               setSelected={setSelected}
             />
             <Cards
-              languages={languages}
+              languages={siteLanguage}
               selected={selected}
               setSelectedType={setSelectedType}
+              language={language}
             />
             <CheckboxList
-              languages={languages}
+              languages={siteLanguage}
               language={selected}
               selectedType={selectedType}
               handleChange={handleChange}
+              handleRadioChange={handleRadioChange}
+              title={language}
               result={result} // Pass the result object to CheckboxList
             />
           </div>
 
           {/* 1/4 section: Only visible on large screens */}
           <div className='w-full lg:w-1/4 lg:block hidden'>
-            <User result={result} />
+            <User result={result} language={language} />
           </div>
         </div>
       </div>
