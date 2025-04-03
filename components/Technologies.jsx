@@ -41,7 +41,7 @@ export const Technologies = ({ languages, selected, setSelected }) => {
         </Select>
       </div>
 
-      <div className='mx-6'>
+      <div className='mx-6 text-xs'>
         {/* Displaying description based on the selected language */}
         {selected && languages[selected]?.description}
       </div>

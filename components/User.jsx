@@ -2,11 +2,11 @@ import { PiUserCircleCheckDuotone } from 'react-icons/pi';
 import { Label } from './ui/label';
 import { Input } from './ui/input';
 
-export const User = ({ result, language }) => {
+export const User = ({ result, language, selectedDevType, startDate }) => {
   return (
-    <div className='flex flex-col gap-4 mx-4 py-6'>
+    <div className='flex flex-col gap-4 mx-4 py-2'>
       <div className='flex justify-center'>
-        <PiUserCircleCheckDuotone className='text-9xl' />
+        <PiUserCircleCheckDuotone className='text-8xl' />
       </div>
 
       {/* Display selected language */}
@@ -18,6 +18,30 @@ export const User = ({ result, language }) => {
           className='ring-0 border-0 focus-visible:ring-offset-0 focus-visible:ring-0'
           disabled
           defaultValue={result.language || ''}
+        />
+      </div>
+
+      {/* Display development type */}
+      <div className='flex flex-col'>
+        <Label className='font-semibold'>
+          {language ? 'Development Type:' : '開発タイプ:'}
+        </Label>
+        <Input
+          className='ring-0 border-0 focus-visible:ring-offset-0 focus-visible:ring-0'
+          disabled
+          defaultValue={selectedDevType.type || ''}
+        />
+      </div>
+
+      {/* Start date */}
+      <div className='flex flex-col'>
+        <Label className='font-semibold'>
+          {language ? 'Start Date:' : '開始日:'}
+        </Label>
+        <Input
+          className='ring-0 border-0 focus-visible:ring-offset-0 focus-visible:ring-0'
+          disabled
+          defaultValue={startDate || ''}
         />
       </div>
 

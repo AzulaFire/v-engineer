@@ -63,7 +63,7 @@ export const Cards = ({ languages, selected, setSelectedType, language }) => {
   };
 
   return (
-    <div className='flex flex-row gap-8 mt-8 justify-center'>
+    <div className='flex flex-row gap-8 mt-4 justify-center'>
       {filteredCards.map((card, index) => (
         <Card
           key={index}

@@ -33,7 +33,7 @@ export const CheckboxList = ({
         <div>
           {/* Frameworks Section */}
           <h2
-            className='text-lg font-semibold mb-4 uppercase cursor-pointer'
+            className='text-md font-semibold mb-4 uppercase cursor-pointer'
             onClick={() => handleToggle('frameworks')}
           >
             {title ? 'Frameworks/Libraries:' : 'フレームワーク/ライブラリ:'}
@@ -72,7 +72,7 @@ export const CheckboxList = ({
 
           {/* Databases Section */}
           <h2
-            className='text-lg font-semibold mb-4 uppercase cursor-pointer'
+            className='text-md font-semibold mb-4 uppercase cursor-pointer'
             onClick={() => handleToggle('databases')}
           >
             {title ? 'Databases:' : 'データベース:'}
@@ -111,7 +111,7 @@ export const CheckboxList = ({
 
           {/* Cloud Services Section */}
           <h2
-            className='text-lg font-semibold mb-4 uppercase cursor-pointer'
+            className='text-md font-semibold mb-4 uppercase cursor-pointer'
             onClick={() => handleToggle('cloud')}
           >
             {title ? 'Cloud Services:' : 'クラウドサービス:'}
@@ -150,7 +150,7 @@ export const CheckboxList = ({
 
           {/* Experience Section */}
           <h2
-            className='text-lg font-semibold mb-4 uppercase cursor-pointer'
+            className='text-md font-semibold mb-4 uppercase cursor-pointer'
             onClick={() => handleToggle('experience')}
           >
             {title ? 'Experience:' : '経験:'}

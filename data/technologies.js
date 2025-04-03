@@ -619,3 +619,159 @@ export const jpLanguages = {
     ],
   },
 };
+
+export const developmentTypes = [
+  {
+    type: 'New Project Development',
+    definition:
+      'This is the creation of an entirely new software product or system from scratch. It typically involves defining requirements, designing the architecture, writing the code, and testing the solution.',
+  },
+  {
+    type: 'Feature Development',
+    definition:
+      "This involves adding new features to an existing software product. It's focused on improving the functionality of the application based on user feedback or new requirements.",
+  },
+  {
+    type: 'Upgrade/Version Upgrade',
+    definition:
+      'This type of development involves updating an existing application to a newer version of the software. It could include new features, improvements in performance, bug fixes, or upgrading underlying libraries and frameworks to ensure compatibility with newer technologies.',
+  },
+  {
+    type: 'Bug Fixes/Issue Resolution',
+    definition:
+      'Sometimes referred to as maintenance development, this focuses on fixing bugs or issues in an existing system. The development team addresses problems that users or testers identify.',
+  },
+  {
+    type: 'Refactoring',
+    definition:
+      'Refactoring refers to improving the internal structure of the code without changing its external behavior. The goal is to make the code more maintainable, efficient, or scalable, often in preparation for future features or upgrades.',
+  },
+  {
+    type: 'Migration',
+    definition:
+      'Migration involves moving software from one environment to another. This can include moving to a different server, platform, or cloud provider, or migrating from an older system (e.g., a legacy system) to a more modern one. Data Migration is also a key part of this process, especially when transferring data between systems with different architectures.',
+  },
+  {
+    type: 'Integration Development',
+    definition:
+      'This involves connecting different systems, tools, or services to work together. It could involve APIs, third-party service integrations, or integrating different software components within a larger ecosystem.',
+  },
+  {
+    type: 'Customization',
+    definition:
+      'Custom development is focused on modifying or enhancing a software application to suit the specific needs of a particular user or organization. It is more focused on tailoring an existing solution to meet custom requirements.',
+  },
+  {
+    type: 'Prototyping',
+    definition:
+      'Prototyping is the development of an early version of a software system (prototype) to explore its feasibility or validate user needs before the full-scale development. It is often used in the initial stages of product design.',
+  },
+  {
+    type: 'Testing/Quality Assurance (QA)',
+    definition:
+      'Testing is a critical part of development, ensuring the software works as intended. Development in this context can involve writing test scripts, automating tests, and continuously testing different modules of the software throughout the development process.',
+  },
+  {
+    type: 'Continuous Integration/Continuous Deployment (CI/CD)',
+    definition:
+      'This type of development focuses on automating the processes of code integration, testing, and deployment. The goal is to deliver smaller, frequent releases to production.',
+  },
+  {
+    type: 'Cloud Development',
+    definition:
+      'Development for cloud platforms, which may include designing, building, and deploying software in cloud environments like AWS, Google Cloud, or Azure. Cloud-native development focuses on scalability, availability, and performance in the cloud.',
+  },
+  {
+    type: 'Security Enhancements',
+    definition:
+      'Security development focuses on ensuring the software is secure, which could involve patching vulnerabilities, updating encryption standards, or adding new features to secure data.',
+  },
+  {
+    type: 'End-of-Life (EOL) and Decommissioning',
+    definition:
+      'When a product reaches its end-of-life stage, development may focus on decommissioning features or migrating users to newer systems. This could include removing support for legacy systems or transferring data to newer platforms.',
+  },
+  {
+    type: 'DevOps',
+    definition:
+      'DevOps focuses on integrating development and operations to improve the deployment cycle and application maintenance. It involves automating workflows, continuous monitoring, and ensuring that software is deployed, maintained, and updated efficiently.',
+  },
+];
+
+export const jpdDevelopmentTypes = [
+  {
+    type: '新規プロジェクト開発',
+    definition:
+      'これは新しいソフトウェア製品またはシステムをゼロから作成することです。通常、要求の定義、アーキテクチャの設計、コードの作成、ソリューションのテストが含まれます。',
+  },
+  {
+    type: '機能開発',
+    definition:
+      'これは既存のソフトウェア製品に新しい機能を追加することです。ユーザーからのフィードバックや新しい要求に基づいて、アプリケーションの機能を改善することに焦点を当てています。',
+  },
+  {
+    type: 'アップグレード／バージョンアップ',
+    definition:
+      'この種類の開発は、既存のアプリケーションをソフトウェアの新しいバージョンに更新することです。新機能、パフォーマンスの改善、バグ修正、または新しい技術との互換性を確保するために基盤ライブラリやフレームワークのアップグレードが含まれることがあります。',
+  },
+  {
+    type: 'バグ修正／問題解決',
+    definition:
+      'メンテナンス開発とも呼ばれ、これは既存のシステムでバグや問題を修正することに焦点を当てています。開発チームは、ユーザーやテスターが特定した問題に対応します。',
+  },
+  {
+    type: 'リファクタリング',
+    definition:
+      'リファクタリングは、外部の動作を変更することなくコードの内部構造を改善することを指します。目的は、コードをより維持可能、効率的、またはスケーラブルにすることです。これは通常、将来の機能やアップグレードに備えるために行われます。',
+  },
+  {
+    type: 'マイグレーション',
+    definition:
+      'マイグレーションは、ソフトウェアを1つの環境から別の環境に移動することを指します。これは異なるサーバー、プラットフォーム、またはクラウドプロバイダに移行すること、または古いシステム（例：レガシーシステム）からより現代的なシステムに移行することを含む場合があります。データマイグレーションも重要な部分であり、異なるアーキテクチャのシステム間でデータを移行する際に特に重要です。',
+  },
+  {
+    type: '統合開発',
+    definition:
+      'これは異なるシステム、ツール、またはサービスを連携させて一緒に動作させることです。API、サードパーティサービスとの統合、またはより大きなエコシステム内での異なるソフトウェアコンポーネントの統合が含まれる場合があります。',
+  },
+  {
+    type: 'カスタマイズ',
+    definition:
+      'カスタム開発は、特定のユーザーまたは組織のニーズに合わせてソフトウェアアプリケーションを修正または強化することに焦点を当てています。既存のソリューションをカスタム要件に合わせて調整することにより、特化した解決策を提供します。',
+  },
+  {
+    type: 'プロトタイピング',
+    definition:
+      'プロトタイピングは、ソフトウェアシステムの初期バージョン（プロトタイプ）を開発して、その実現可能性を探るか、フルスケール開発の前にユーザーのニーズを検証することです。通常、製品設計の初期段階で使用されます。',
+  },
+  {
+    type: 'テスト／品質保証 (QA)',
+    definition:
+      'テストは開発の重要な部分であり、ソフトウェアが意図した通りに動作することを保証します。このコンテキストでの開発は、テストスクリプトの作成、テストの自動化、ソフトウェアの異なるモジュールを開発プロセス全体で継続的にテストすることを含む場合があります。',
+  },
+  {
+    type: '継続的インテグレーション／継続的デプロイメント (CI/CD)',
+    definition:
+      'この種類の開発は、コードの統合、テスト、およびデプロイメントのプロセスを自動化することに焦点を当てています。目標は、より小さな頻繁なリリースを本番環境に提供することです。',
+  },
+  {
+    type: 'クラウド開発',
+    definition:
+      'クラウドプラットフォームのための開発で、AWS、Google Cloud、またはAzureなどのクラウド環境でソフトウェアの設計、構築、デプロイが含まれる場合があります。クラウドネイティブ開発は、クラウドでのスケーラビリティ、可用性、およびパフォーマンスに焦点を当てています。',
+  },
+  {
+    type: 'セキュリティ強化',
+    definition:
+      'セキュリティ開発は、ソフトウェアの安全性を確保することに焦点を当てています。これには、脆弱性の修正、暗号化基準の更新、またはデータを保護する新しい機能の追加が含まれることがあります。',
+  },
+  {
+    type: 'エンド・オブ・ライフ (EOL) および廃止',
+    definition:
+      '製品がエンド・オブ・ライフ段階に達すると、開発は機能の廃止やユーザーの新しいシステムへの移行に焦点を当てることがあります。これには、レガシーシステムのサポートの削除やデータの新しいプラットフォームへの移行が含まれる場合があります。',
+  },
+  {
+    type: 'DevOps',
+    definition:
+      'DevOpsは、開発と運用を統合してデプロイメントサイクルとアプリケーションのメンテナンスを改善することに焦点を当てています。これには、ワークフローの自動化、継続的な監視、ソフトウェアが効率的にデプロイされ、維持され、更新されることを確保することが含まれます。',
+  },
+];
